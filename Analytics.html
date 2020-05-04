@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ARB-RPA Dash Bard</title>
+
+    <style>
+        body {
+            background-image: url('Body-bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/Sohail-RPA-DashBoard.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" class="body">
+
+    <!-- Page -->
+
+    <div class="container-fluid">
+        <div class="shadow p-1 mb-1 mt-3 bg-light rounded border-bottom-success">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+                <img src="Images\logo4.png" class="pr-5" alt="Virtech" style="width:11%;">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="SummaryReport.html"><span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item border-left-dark">
+                            <a class="nav-link" href="SummaryReport.html">Summary Report</a>
+                        </li>
+                        </li>
+                        <li class="nav-item border-left-dark">
+                            <a class="nav-link" href="Analytics.html">Analytics</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <img src="Images\logo.png" class="float-right" alt="Virtech" style="width:9%;">
+
+            </nav>
+
+        </div>
+        <!--Navigation Bar Ends-->
+
+
+        <div class="row">
+            <div class="col">
+                <!--Bar Chat Starts -->
+
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">ARB RPA BOT Productivity </h6>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <canvas id="myBarChart"></canvas>
+                    </div>
+                </div>
+                <!--Bar Chat Ends-->
+            </div>
+            <div class="col">
+                <!--Pie Chat Starts-->
+
+                <div class="card shadow MB-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Process Wise Pie Chat</h6>
+                    </div>
+                    <div class="card-body" style="height: 600px; padding-bottom: 5PX;">
+                        <div id="chart">
+
+                            <svg class="bi bi-info-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                        
+                            </svg> TC - Total Cases &nbsp; &nbsp;
+
+                            <svg class="bi bi-info-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg> SE - System Exceptions &nbsp;
+
+                            <svg class="bi bi-info-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                        
+                            </svg> BE - Business Exceptionss <br>
+
+                            <svg class="bi bi-info-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg> IC - InScope Cases
+
+                            <svg class="bi bi-info-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 16A8 8 0 108 0a8 8 0 000 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg> CC - Completed Cases
+
+                        </div>
+                    </div>
+                </div>
+                <!--Pie Chat Ends-->
+
+
+            </div>
+
+        </div>
+        <!-- Footer -->
+        <div class="shadow bg-light">
+            <footer class="sticky-footer bg-light ">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2019</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div><!-- E>nd of Footer -->
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/Sohail-RPA-DashBoard.css"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!--Fiter javascript-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <!--Pie Chat Script Starts -->
+    <script>
+        var data = {
+            "name": "",
+            "children": [{ "name": "Way2SMSProcess", "children": [{ "name": "TC- ", "size": 8 }, { "name": "SE- ", "size": 4 }, { "name": "BE- ", "size": 2 }, { "name": "IE- ", "size": 4 }, { "name": "CC- ", "size": 2 }] }, { "name": "OddNumberProcess", "children": [{ "name": "TC- ", "size": 9 }, { "name": "SE- ", "size": 2 }, { "name": "BE- ", "size": 0 }, { "name": "IE- ", "size": 7 }, { "name": "CC- ", "size": 7 }] }, { "name": "Sum of 2 numbers", "children": [{ "name": "TC- ", "size": 10 }, { "name": "SE- ", "size": 2 }, { "name": "BE- ", "size": 1 }, { "name": "IE- ", "size": 8 }, { "name": "CC- ", "size": 7 }] }]
+        };
+
+        var width = 700,
+            height = 700,
+            radius = Math.min(width, height) / 3;
+
+        var x = d3.scale.linear()
+            .range([0, 2 * Math.PI]);
+
+        var y = d3.scale.sqrt()
+            .range([0, radius]);
+
+        var color = d3.scale.category20c();
+        // var color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, root3.children.length + 1)); 
+
+        let chart = document.getElementById("chart")
+        var svg = d3.select(chart).append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + (height / 2 - 100) + ") rotate(-90 0 0)")
+            .style("font", "10px sans-serif");
+        // .style("Fill", transparent);
+
+        var partition = d3.layout.partition()
+            .value(function (d) {
+                return d.size;
+            }); ""
+
+        var arc = d3.svg.arc()
+            .startAngle(function (d) {
+                return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+            })
+            .endAngle(function (d) {
+                return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
+            })
+            .innerRadius(function (d) {
+                return Math.max(0, y(d.y));
+            })
+            .outerRadius(function (d) {
+                return Math.max(0, y(d.y + d.dy));
+            });
+
+        //d3.json("/d/4063550/flare.json", function(error, root) {
+
+
+        var g = svg.selectAll("g")
+            .data(partition.nodes(data))
+            .enter().append("g");
+
+        var path = g.append("path")
+            .attr("d", arc)
+            .style("fill", function (d) {
+                return color((d.children ? d : d.parent).name);
+            })
+            .on("click", click);
+
+        path.append("title")
+            .text(d => d.size ? getnamesOfTooltips(d) : d.name);
+
+        var text = g.append("text")
+            .attr("x", function (d) {
+                return y(d.y);
+            })
+            .attr("dx", "6") // margin
+            .attr("dy", ".35em") // vertical-align
+            .text(function (d) {
+                return d.size ? d.name + " " + d.size : d.name;
+            });
+
+        function computeTextRotation(d) {
+            var angle = x(d.x + d.dx / 2) - Math.PI / 2;
+            return angle / Math.PI * 180;
+        }
+        function getnamesOfTooltips(d) {
+            if (d.name == "TC- ") {
+                return "Total Cases- " + d.size;
+            }
+            if (d.name == "SE- ") {
+                return "System Exceptions- " + d.size;
+            }
+            if (d.name == "BE- ") {
+                return "Business Exceptions- " + d.size;
+            }
+            if (d.name == "IC- ") {
+                return "InScope Cases- " + d.size;
+            }
+            if (d.name == "CC- ") {
+                return "Completed Cases- " + d.size;
+            }
+            if (d.name == "IE- ") {
+                return "InScope Cases- " + d.size;
+            }
+            else {
+                return d.name + " " + d.size;
+            }
+        }
+        text.attr("transform", function (d) {
+            return "rotate(" + computeTextRotation(d) + ")";
+        });
+
+
+        function click(d) {
+            // fade out all text elements
+            if (d.size !== undefined) {
+                d.size += 100;
+            };
+            text.transition().attr("opacity", 0);
+
+            path.transition()
+                .duration(750)
+                .attrTween("d", arcTween(d))
+                .each("end", function (e, i) {
+                    // check if the animated element's data e lies within the visible angle span given in d
+                    if (e.x >= d.x && e.x < (d.x + d.dx)) {
+                        // get a selection of the associated text element
+                        var arcText = d3.select(this.parentNode).select("text");
+                        // fade in the text element and recalculate positions
+                        arcText.transition().duration(750)
+                            .attr("opacity", 1)
+                            .attr("transform", function () {
+                                return "rotate(" + computeTextRotation(e) + ")"
+                            })
+                            .attr("x", function (d) {
+                                return y(d.y);
+                            });
+                    }
+                });
+        } //});
+
+        d3.select(self.frameElement).style("height", height + "px");
+
+        // Interpolate the scales!
+        function arcTween(d) {
+            var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+                yd = d3.interpolate(y.domain(), [d.y, 1]),
+                yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+            return function (d, i) {
+                return i ? function (t) {
+                    return arc(d);
+                } : function (t) {
+                    x.domain(xd(t));
+                    y.domain(yd(t)).range(yr(t));
+                    return arc(d);
+                };
+            };
+        }
+
+    </script>
+    <!--Pie Chat Script Ends   -->
+
+
+    <!--Bar Chat Script Starts-->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+    <!--Bar Chat Script Ends-->
+
+
+
+
+</body>
+
+</html>
